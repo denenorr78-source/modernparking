@@ -26,14 +26,6 @@ A professional Tkinter + SQLite parking management application.
 - Database backup
 - Dark cinematic burnt-orange UI
 
-## First login (demo)
-
-Username: `admin`
-
-Password: `Admin@123`
-
-This credential is included only for the project/demo setup. For real deployment, change it immediately and restrict access to the database file.
-
 ## Run
 
 ```bash
