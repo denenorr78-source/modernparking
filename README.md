@@ -71,7 +71,7 @@ For a production deployment, add OS-level file permissions, encrypted backups, c
 ## Submission/demo flow
 
 1. Run `python main.py`.
-2. Log in with the demo admin account above.
+2. Log in or create a new account.
 3. Park a vehicle and show the automatic slot assignment.
 4. Open **Parked Vehicles** and **Search**.
 5. Use **Checkout** to calculate the bill and record Cash, M-Pesa or Card payment.
