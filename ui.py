@@ -997,7 +997,7 @@ class ParkingApp:
                 self.current_user["id"],
                 method,
             )
-        except ValueError as error:
+        except (ValueError, KeyError) as error:
             messagebox.showerror(
                 "Checkout Failed",
                 str(error),
@@ -1582,3 +1582,4 @@ class ParkingApp:
             "Backup Created",
             f"Backup saved as:\n{path.name}",
         )
+

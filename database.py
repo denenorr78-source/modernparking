@@ -250,6 +250,7 @@ class Database:
 
     def park_vehicle(self, reg_no, owner, phone, vehicle_type, user_id):
         now = self.now()
+        vehicle_type = (vehicle_type or "").strip().upper()
 
         with self.connect() as conn:
             existing = conn.execute(
@@ -407,7 +408,8 @@ class Database:
             seconds = max(0, (now_dt - arrival).total_seconds())
             billable_hours = max(1, int((seconds + 3599) // 3600))
 
-            rate = self.get_rates()[row["vehicle_type"]]
+            vehicle_type = (row["vehicle_type"] or "").upper()
+            rate = self.get_rates()[vehicle_type]
             amount = billable_hours * rate
 
             receipt_no = (
@@ -671,3 +673,8 @@ class Database:
                 """,
                 (f"-{int(days)} days",),
             ).fetchone()
+
+
+# Keep an alias for compatibility with older references.
+Database = Database
+
